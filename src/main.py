@@ -2,6 +2,7 @@ from movimentation_logic import Exploration
 from knowledge_base import KnowledgeBase
 from environment import WumpusWorld
 from environment import size
+#from view import ViewMatrix
 
 
 class Main:
@@ -11,11 +12,11 @@ class Main:
 
     print("\n\t MUNDO GERADO:")
     print('\n')
-    for i in range(size):
-        print(world.field[i])
+    for count in range(size):
+        print(world.field[count])
     print('\n')
-    for i in range(size):
-        print(world.perceptions[i])
+    for count in range(size):
+        print(world.perceptions[count])
 
     base = KnowledgeBase(world)
     explore = Exploration(world, base)
@@ -27,6 +28,8 @@ class Main:
         print('\nO agente NÃO CONSEGUIU encontrar o ouro!')
 
     print('\nPONTUAÇÃO: ' + str(explore.points) + '\n')
+
+    #view = ViewMatrix()
 
 
 if __name__ == '__main__':
